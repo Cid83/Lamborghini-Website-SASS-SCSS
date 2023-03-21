@@ -1,0 +1,399 @@
+
+
+@import 'variables';
+@import 'modules';
+
+// Responsive Yapı
+
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: 800px) and (max-width: 1400px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  mix-blend-mode: darken;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: $main-font;
+  overflow-x: hidden;
+}
+
+// Header
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  img {
+    width: 80px;
+    margin: 10px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: $text-color;
+      &:hover {
+        color: rgb(196, 166, 0);
+        font-weight: 500;
+        transition: all 0.5s;
+      }
+    }
+  }
+  #nav-left {
+    a {
+      padding: 0 20px;
+      border-right: 1px solid gray;
+      font-size: 15px;
+      &:last-child {
+        border-right: none;
+      }
+
+      @include mobile {
+        padding: 0 3px;
+        font-size: 11px;
+      }
+    }
+  }
+  #nav-right {
+    margin-right: 25px;
+    gap: 30px;
+    font-size: 15px;
+    @include mobile {
+      display: none;
+    }
+  }
+  .opener {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -80px;
+    background-color: rgb(220, 220, 220);
+    box-shadow: 2px 2px 10px;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 10px;
+      margin: 3px;
+    }
+  }
+  .menu {
+    width: 40px;
+    display: none;
+    @include mobile {
+      display: block;
+    }
+    &:hover + .opener {
+      display: flex;
+    }
+  }
+}
+
+// HERO 
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px;
+  background: linear-gradient(rgb(214, 214, 214) 25%, $bg-color 20%);
+ 
+
+  @include mobile {
+
+    flex-direction: column;
+    justify-content:none;
+    text-align: center;
+    padding: 30px 40px;
+  }
+  @include laptop {
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    text-align: center;
+  }
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+ 
+
+  @include mobile {
+    gap: 20px;
+  }
+
+  h1 {
+    @extend %heading;
+    font-size: 35px;
+
+    @include mobile {
+      text-align: center;
+      
+    }
+    span {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 40px
+    }
+  }
+  p {
+    @extend %p;
+    
+    @include mobile{
+        font-size: 12px;
+    }
+  }
+  img {
+    width: 600px;
+
+    @include mobile{
+      width: 200px;
+    }
+  }
+  h2 {
+    @extend %heading;
+  }
+  button {
+
+    @extend %button;
+
+    background-color: rgb(196, 166, 0);
+    width: 200px;
+    transition: all 0.4s;
+    &:hover {
+      background-color: rgba(196, 166, 0,0.5);
+      transition: all 0.4s;
+    }
+
+    @include mobile{
+        width:100px;
+    }
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  @include mobile{
+    flex-direction: column;
+  }
+
+  &-banner {
+    width: 600px;
+
+    @include mobile {
+        max-width: 450px;
+      }
+    @include laptop {
+      max-width: 500px;
+    }
+  }
+  &-track {
+    max-width: 300px;
+  }
+  p {
+    max-width: 300px;
+    text-align: center;
+    @extend %p;
+  }
+}
+
+// İç Dizayn
+
+#interior {
+  @extend %design;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.3), black),
+    url('/images/interior.jpg');
+
+    @include mobile{
+        p{
+            font-size: 13px;
+        }
+
+        button{
+            width: 100px;
+            padding: 4px 8px;
+
+        }
+    }
+}
+
+#exterior {
+  @extend %design;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1), black),
+    url('/images/exterior.jpg');
+  p {
+    font-size: 17px;
+
+    @include mobile {
+      font-size: 13px;
+    }
+  }
+
+  @include mobile {
+    button{
+        width: 100px;
+        padding: 4px 8px;
+    }
+  }
+}
+
+// Arabalar
+
+#cars-area {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: 50px 0;
+
+  h1{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+ 
+  .cars {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+   
+    @include mobile {
+      flex-direction: column;
+    }
+    img {
+      width: 300px;
+    }
+    h3 {
+      text-align: center;
+      align-items: center;
+    }
+  }
+  button {
+    @extend %button;
+    background-color: rgb(196, 166, 0);
+    width: 200px;
+    transition: all 0.4s;
+    
+    &:hover {
+      background-color: rgba(196, 166, 0,0.5);
+      transition: all 0.4s;
+    }
+
+    @include mobile{
+        width: 100px;
+        align-items: center;
+        text-align: center;
+        padding: 10px 5px;
+    }
+  }
+}
+
+// Footer
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: black;
+  padding: 50px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 20px;
+  }
+  img {
+    width: 200px;
+    height: 150px;
+    mix-blend-mode: unset;
+
+    @include mobile{
+      width: 100px;
+      height: 90px;
+    }
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    @include mobile {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    h2 {
+      @extend %heading;
+      color: white;
+      cursor: pointer;
+
+      @include mobile{
+        display: none;
+      }
+
+      &:hover{
+        
+        color: rgb(196, 166, 0);
+        font-weight: 500;
+        transition: all 0.5s;
+      }
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover{
+        
+            color: rgb(196, 166, 0);
+            font-weight: 500;
+            transition: all 0.5s;
+          }
+    }
+
+  }
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  position: relative;
+}
+
+.box div {
+  position: absolute;
+  right: 0;
+  bottom: -24px;
+}

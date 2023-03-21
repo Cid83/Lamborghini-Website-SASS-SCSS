@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+footer .footer-links h2, .slogan h2, .slogan h1, #exterior h1, #interior h1 {
+  font-family: "Inter";
+  color: #252a34;
+}
+
+.images p, .slogan p, #exterior p, #interior p {
+  color: #4b4d50;
+  font-size: 15px;
+}
+
+#cars-area button, .slogan button {
+  padding: 10px 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#exterior, #interior {
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
+}
+#exterior h1, #interior h1 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+#exterior p, #interior p {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 300;
+  max-width: 500px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+#exterior button, #interior button {
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid white;
+  transition: background-color 0.4s;
+  color: white;
+  padding: 15px 40px;
+  width: 200px;
+  transition: all 0.5s;
+}
+#exterior button:hover, #interior button:hover {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  mix-blend-mode: darken;
+}
+
+body {
+  background-color: #eaeaea;
+  font-family: "Poppins";
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+header img {
+  width: 80px;
+  margin: 10px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav a {
+  text-decoration: none;
+  color: #252a34;
+}
+header nav a:hover {
+  color: rgb(196, 166, 0);
+  font-weight: 500;
+  transition: all 0.5s;
+}
+header #nav-left a {
+  padding: 0 20px;
+  border-right: 1px solid gray;
+  font-size: 15px;
+}
+header #nav-left a:last-child {
+  border-right: none;
+}
+@media (max-width: 800px) {
+  header #nav-left a {
+    padding: 0 3px;
+    font-size: 11px;
+  }
+}
+header #nav-right {
+  margin-right: 25px;
+  gap: 30px;
+  font-size: 15px;
+}
+@media (max-width: 800px) {
+  header #nav-right {
+    display: none;
+  }
+}
+header .opener {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: -80px;
+  background-color: rgb(220, 220, 220);
+  box-shadow: 2px 2px 10px;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
+header .opener a {
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+  margin: 3px;
+}
+header .menu {
+  width: 40px;
+  display: none;
+}
+@media (max-width: 800px) {
+  header .menu {
+    display: block;
+  }
+}
+header .menu:hover + .opener {
+  display: flex;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px;
+  background: linear-gradient(rgb(214, 214, 214) 25%, #eaeaea 20%);
+}
+@media (max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    justify-content: none;
+    text-align: center;
+    padding: 30px 40px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1400px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    text-align: center;
+  }
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+}
+@media (max-width: 800px) {
+  .slogan {
+    gap: 20px;
+  }
+}
+.slogan h1 {
+  font-size: 35px;
+}
+@media (max-width: 800px) {
+  .slogan h1 {
+    text-align: center;
+  }
+}
+.slogan h1 span {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+}
+@media (max-width: 800px) {
+  .slogan p {
+    font-size: 12px;
+  }
+}
+.slogan img {
+  width: 600px;
+}
+@media (max-width: 800px) {
+  .slogan img {
+    width: 200px;
+  }
+}
+.slogan button {
+  background-color: rgb(196, 166, 0);
+  width: 200px;
+  transition: all 0.4s;
+}
+.slogan button:hover {
+  background-color: rgba(196, 166, 0, 0.5);
+  transition: all 0.4s;
+}
+@media (max-width: 800px) {
+  .slogan button {
+    width: 100px;
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+@media (max-width: 800px) {
+  .images {
+    flex-direction: column;
+  }
+}
+.images-banner {
+  width: 600px;
+}
+@media (max-width: 800px) {
+  .images-banner {
+    max-width: 450px;
+  }
+}
+@media (min-width: 800px) and (max-width: 1400px) {
+  .images-banner {
+    max-width: 500px;
+  }
+}
+.images-track {
+  max-width: 300px;
+}
+.images p {
+  max-width: 300px;
+  text-align: center;
+}
+
+#interior {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.3), black), url("/images/interior.jpg");
+}
+@media (max-width: 800px) {
+  #interior p {
+    font-size: 13px;
+  }
+  #interior button {
+    width: 100px;
+    padding: 4px 8px;
+  }
+}
+
+#exterior {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1), black), url("/images/exterior.jpg");
+}
+#exterior p {
+  font-size: 17px;
+}
+@media (max-width: 800px) {
+  #exterior p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 800px) {
+  #exterior button {
+    width: 100px;
+    padding: 4px 8px;
+  }
+}
+
+#cars-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+#cars-area h1 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#cars-area .cars {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+@media (max-width: 800px) {
+  #cars-area .cars {
+    flex-direction: column;
+  }
+}
+#cars-area .cars img {
+  width: 300px;
+}
+#cars-area .cars h3 {
+  text-align: center;
+  align-items: center;
+}
+#cars-area button {
+  background-color: rgb(196, 166, 0);
+  width: 200px;
+  transition: all 0.4s;
+}
+#cars-area button:hover {
+  background-color: rgba(196, 166, 0, 0.5);
+  transition: all 0.4s;
+}
+@media (max-width: 800px) {
+  #cars-area button {
+    width: 100px;
+    align-items: center;
+    text-align: center;
+    padding: 10px 5px;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: black;
+  padding: 50px;
+}
+@media (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+footer img {
+  width: 200px;
+  height: 150px;
+  mix-blend-mode: unset;
+}
+@media (max-width: 800px) {
+  footer img {
+    width: 100px;
+    height: 90px;
+  }
+}
+footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 800px) {
+  footer .footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+footer .footer-links h2 {
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  footer .footer-links h2 {
+    display: none;
+  }
+}
+footer .footer-links h2:hover {
+  color: rgb(196, 166, 0);
+  font-weight: 500;
+  transition: all 0.5s;
+}
+footer .footer-links a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+footer .footer-links a:hover {
+  color: rgb(196, 166, 0);
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  position: relative;
+}
+
+.box div {
+  position: absolute;
+  right: 0;
+  bottom: -24px;
+}/*# sourceMappingURL=style.css.map */
